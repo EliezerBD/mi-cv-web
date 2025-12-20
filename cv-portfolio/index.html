@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliezer Beltran | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="blob-cont">
+        <div class="blob blob-one"></div>
+        <div class="blob blob-two"></div>
+        <div class="blob blob-three"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="logo">Eliezer<span class="accent">.dev</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <p class="greeting">Hola, soy</p>
+            <h1>Eliezer Beltran</h1>
+            <h2 class="dynamic-text">Junior Full Stack Developer</h2>
+            <p class="bio">
+                Desarrollador Full-Stack Junior con experiencia en desarrollo de aplicaciones web utilizando
+                Python/Flask y JavaScript. Capacidad demostrada para implementar sistemas completos incluyendo
+                integración con APIs externas, autenticación OAuth2, y arquitecturas basadas en microservicios con
+                Docker. Enfocado en escribir código limpio, mantenible y siguiendo las mejores prácticas de seguridad.
+                Apasionado por el aprendizaje continuo y la resolución de problemas complejos.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn primary">Ver Proyectos</a>
+                <a href="#contact" class="btn secondary">Contactar</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">Mis Proyectos</h2>
+        <div class="projects-grid">
+            <!-- Project 1: FacturaFlow -->
+            <article class="project-card glass-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-file-invoice-dollar project-icon"></i>
+                    <div class="links">
+                        <a href="https://github.com/EliezerBD/facturaflow" target="_blank" title="Ver Código"><i
+                                class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>FacturaFlow</h3>
+                <p class="project-desc">Sistema integral de gestión y análisis de facturas electrónicas. Automatiza la
+                    extracción desde Gmail y presenta métricas en un dashboard interactivo.</p>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>Docker</span>
+                    <span>MariaDB</span>
+                    <span>Gmail API</span>
+                </div>
+            </article>
+
+            <!-- Project 2: DTE Finder -->
+            <article class="project-card glass-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-cloud-arrow-down project-icon"></i>
+                    <div class="links">
+                        <a href="https://github.com/EliezerBD/facturas-app-v2" target="_blank" title="Ver Código"><i
+                                class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Buscador DTE El Salvador</h3>
+                <p class="project-desc">Solución automatizada para buscar y descargar masivamente Facturas Electrónicas
+                    (DTE) desde correos de Gmail, generando archivos comprimidos listos para contabilidad.</p>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>Automation</span>
+                    <span>Docker</span>
+                    <span>Render</span>
+                </div>
+            </article>
+
+            <!-- Project 3: E-commerce Catalog -->
+            <article class="project-card glass-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-tags project-icon"></i>
+                    <div class="links">
+                        <a href="https://github.com/EliezerBD/EcommDEMO" target="_blank" title="Ver Código"><i
+                                class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>E-commerce Catalog Service</h3>
+                <p class="project-desc">Microservicio robusto desarrollado en Spring Boot para la gestión de catálogos
+                    de productos. Diseñado con arquitectura escalable y contenedorizada.</p>
+                <div class="tags">
+                    <span>Java</span>
+                    <span>Spring Boot</span>
+                    <span>Microservices</span>
+                    <span>Docker</span>
+                    <span>PostgreSQL</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        <div class="skills-container">
+            <div class="skill-category glass-card">
+                <h3>Backend</h3>
+                <div class="skill-list">
+                    <div class="skill-item"><i class="fa-brands fa-python"></i> Python (Flask)</div>
+                    <div class="skill-item"><i class="fa-brands fa-java"></i> Java (Spring Boot)</div>
+                    <div class="skill-item"><i class="fa-solid fa-database"></i> SQL (MariaDB, PostgreSQL)</div>
+                </div>
+            </div>
+            <div class="skill-category glass-card">
+                <h3>DevOps & Tools</h3>
+                <div class="skill-list">
+                    <div class="skill-item"><i class="fa-brands fa-docker"></i> Docker & Compose</div>
+                    <div class="skill-item"><i class="fa-brands fa-git-alt"></i> Git & GitHub</div>
+                    <div class="skill-item"><i class="fa-brands fa-linux"></i> Linux Basics</div>
+                </div>
+            </div>
+            <div class="skill-category glass-card">
+                <h3>Frontend</h3>
+                <div class="skill-list">
+                    <div class="skill-item"><i class="fa-brands fa-html5"></i> HTML5 & CSS3</div>
+                    <div class="skill-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+                    <div class="skill-item"><i class="fa-solid fa-chart-pie"></i> Chart.js</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-card glass-card">
+            <p>¿Interesado en colaborar o charlar sobre desarrollo?</p>
+            <a href="mailto:eliezerdba@gmail.com" class="email-link">
+                <i class="fa-solid fa-envelope"></i> eliezerdba@gmail.com
+            </a>
+            <br>
+            <a href="https://github.com/EliezerBD" target="_blank" class="email-link">
+                <i class="fa-brands fa-github"></i> github.com/EliezerBD
+            </a>
+            <div class="social-links">
+                <!-- Add LinkedIn if available -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Eliezer Beltrán. Desarrollado con 💙 y código.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
