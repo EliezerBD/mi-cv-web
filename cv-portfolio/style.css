@@ -1,3 +1,4 @@
+/* 1. VARIABLES Y RESETEO BÁSICO */
 :root {
     --bg-color: #0f172a;
     --text-primary: #f8fafc;
@@ -14,6 +15,9 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    -webkit-print-color-adjust: exact;
+    /* Importante para Chrome al imprimir */
+    print-color-adjust: exact;
 }
 
 body {
@@ -24,7 +28,7 @@ body {
     line-height: 1.6;
 }
 
-/* Dynamic Background Blobs */
+/* 2. FONDO ANIMADO (BLOBS) */
 .blob-cont {
     position: fixed;
     top: 0;
@@ -71,11 +75,16 @@ body {
 }
 
 @keyframes move {
-    from { transform: translate(0, 0) scale(1); }
-    to { transform: translate(30px, -30px) scale(1.1); }
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(30px, -30px) scale(1.1);
+    }
 }
 
-/* Navigation */
+/* 3. NAVEGACIÓN */
 .glass-nav {
     display: flex;
     justify-content: space-between;
@@ -117,7 +126,7 @@ body {
     color: var(--accent-color);
 }
 
-/* Sections */
+/* 4. SECCIONES Y LAYOUT */
 .section {
     padding: 5rem 10%;
 }
@@ -131,7 +140,7 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-/* Hero Section */
+/* 5. HERO (INICIO) */
 .hero {
     height: 100vh;
     display: flex;
@@ -139,13 +148,6 @@ body {
     justify-content: center;
     text-align: center;
     padding: 0 1rem;
-}
-
-.greeting {
-    color: var(--accent-color);
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
 }
 
 .hero h1 {
@@ -174,14 +176,23 @@ body {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
+/* Estilos de Botones */
 .btn {
     padding: 0.8rem 2rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
 }
 
 .btn.primary {
@@ -206,7 +217,7 @@ body {
     color: var(--accent-color);
 }
 
-/* Projects Grid */
+/* 6. PROYECTOS Y TARJETAS */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -249,21 +260,11 @@ body {
     color: #fff;
 }
 
-.project-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.project-desc {
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-}
-
 .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 .tags span {
@@ -275,7 +276,7 @@ body {
     font-weight: 500;
 }
 
-/* Skills */
+/* 7. HABILIDADES */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -306,7 +307,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* Contact */
+/* 8. CONTACTO Y FOOTER */
 .contact-card {
     text-align: center;
     max-width: 600px;
@@ -326,21 +327,6 @@ body {
     color: var(--accent-color);
 }
 
-.social-links {
-    font-size: 2rem;
-}
-
-.social-links a {
-    color: var(--text-secondary);
-    margin: 0 1rem;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: var(--accent-color);
-}
-
-/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
@@ -350,15 +336,168 @@ footer {
     margin-top: 4rem;
 }
 
-/* Responsive */
+/* 9. UTILIDADES (Animación y Responsivo) */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
     }
+
     .hero h1 {
         font-size: 3rem;
     }
+
     .section {
         padding: 4rem 5%;
+    }
+}
+
+/* ----------------------------------------------------------- */
+/* ESTILOS MÁGICOS PARA IMPRESIÓN (EL MODO PDF)         */
+/* ----------------------------------------------------------- */
+@media print {
+
+    /* Ocultamos lo que no sirve en papel */
+    .blob-cont,
+    .glass-nav,
+    .cta-buttons,
+    footer,
+    .project-icon,
+    .links {
+        display: none !important;
+    }
+
+    /* Fondo blanco y texto negro para ahorrar tinta y verse profesional */
+    body {
+        background-color: white !important;
+        color: #1e293b !important;
+        font-size: 11pt;
+        padding: 0;
+    }
+
+    .hero,
+    .section {
+        height: auto;
+        padding: 0;
+        margin-bottom: 20px;
+        display: block;
+        text-align: left;
+    }
+
+    /* Título y Nombre */
+    .hero h1 {
+        color: #000;
+        font-size: 24pt;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+
+    .hero .greeting {
+        display: none;
+    }
+
+    .dynamic-text {
+        color: #2563eb !important;
+        /* Azul profesional */
+        font-size: 14pt;
+        margin-bottom: 10px;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    .bio {
+        color: #333;
+        text-align: left;
+        margin: 0 0 20px 0;
+        font-size: 10pt;
+        max-width: 100%;
+    }
+
+    /* Títulos de sección limpios */
+    .section-title {
+        text-align: left;
+        font-size: 14pt;
+        color: #2563eb !important;
+        border-bottom: 2px solid #e2e8f0;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        background: none;
+        -webkit-text-fill-color: initial;
+    }
+
+    /* Layout de tarjetas para impresión */
+    .projects-grid,
+    .skills-container {
+        display: block;
+    }
+
+    .glass-card {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        padding: 0;
+        margin-bottom: 15px;
+        page-break-inside: avoid;
+    }
+
+    .project-card h3,
+    .skill-category h3 {
+        color: #000 !important;
+        font-size: 12pt;
+        margin-bottom: 2px;
+        text-align: left;
+        font-weight: 700;
+    }
+
+    .project-desc {
+        color: #333 !important;
+        font-size: 10pt;
+        margin-bottom: 5px;
+    }
+
+    .tags span {
+        border: 1px solid #94a3b8;
+        background: none !important;
+        color: #000 !important;
+        font-size: 8pt;
+        padding: 1px 6px;
+        font-weight: normal;
+    }
+
+    /* Skills en fila */
+    .skill-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .skill-item {
+        font-size: 10pt;
+        color: #333;
+    }
+
+    .skill-item i {
+        display: none;
+    }
+
+    /* Contacto compacto */
+    .contact-card {
+        text-align: left;
+        margin: 0;
+    }
+
+    .email-link {
+        margin: 0;
+        font-size: 10pt;
+        color: #000 !important;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 5px;
     }
 }
