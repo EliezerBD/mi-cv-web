@@ -10,7 +10,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliezer Beltran | Portfolio</title>
+    <title>Eliezer Beltrán | Desarrollador Full Stack en El Salvador</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Portfolio de Eliezer Beltrán, Desarrollador Full Stack Junior en El Salvador. Especializado en Python, Flask, Java Spring Boot y automatización de Factura Electrónica (DTE).">
+    <meta name="keywords"
+        content="Desarrollador Full Stack El Salvador, Programador Python El Salvador, Eliezer Beltran, DTE El Salvador, Facturación Electrónica El Salvador, Java Spring Boot, Docker, Junior Developer">
+    <meta name="author" content="Eliezer Beltrán">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://eliezerbd.github.io/"> <!-- Ajustar si usas otro dominio -->
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eliezerbd.github.io/">
+    <meta property="og:title" content="Eliezer Beltrán | Desarrollador Full Stack El Salvador">
+    <meta property="og:description"
+        content="Desarrollador Full Stack con experiencia en automatización de sistemas y microservicios. Conoce mis proyectos como FacturaFlow y Buscador DTE.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/EliezerBD/mi-cv-web/main/preview.png">
+    <!-- Asegúrate de tener una imagen de preview -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://eliezerbd.github.io/">
+    <meta property="twitter:title" content="Eliezer Beltrán | Desarrollador Full Stack El Salvador">
+    <meta property="twitter:description"
+        content="Desarrollador Full Stack especializado en Python, Java y Docker. Proyectos de automatización y DTE.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/EliezerBD/mi-cv-web/main/preview.png">
+
+    <!-- Schema.org (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "Eliezer Beltrán",
+      "url": "https://eliezerbd.github.io/",
+      "image": "https://github.com/EliezerBD.png",
+      "sameAs": [
+        "https://github.com/EliezerBD",
+        "https://www.linkedin.com/in/tu-perfil-linkedin" 
+      ],
+      "jobTitle": "Full Stack Developer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Salvador",
+        "addressCountry": "SV"
+      }
+    }
+    </script>
 
     <!-- Fuentes e Iconos (FontAwesome y Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +79,7 @@
 
     <!-- (HTML) Menú -->
     <nav class="glass-nav">
-        <div class="logo">Eliezer<span class="accent">.dev</span></div>
+        <div class="logo">Eliezer Beltrán</div>
         <ul class="nav-links">
             <li><a href="#about">Sobre mí</a></li>
             <li><a href="#projects">Proyectos</a></li>
@@ -48,10 +95,11 @@
             <h1>Eliezer Beltran</h1>
             <h2 class="dynamic-text">Junior Full Stack Developer</h2>
             <p class="bio">
-                Desarrollador Full-Stack Junior con experiencia en desarrollo de aplicaciones web utilizando
-                Python/Flask y JavaScript. Capacidad demostrada para implementar sistemas completos incluyendo
-                integración con APIs externas, autenticación OAuth2, y arquitecturas basadas en microservicios con
-                Docker. Enfocado en escribir código limpio, mantenible y siguiendo las mejores prácticas de seguridad.
+                Desarrollador Full-Stack Junior residente en <strong>El Salvador</strong>, con experiencia en el
+                desarrollo de aplicaciones web de alto impacto. Especializado en <strong>Python/Flask</strong> y
+                <strong>Java/Spring Boot</strong>, con un enfoque fuerte en la automatización de procesos empresariales
+                como la <strong>Facturación Electrónica (DTE)</strong>. Capacidad demostrada para arquitecturas modernas
+                con Docker y seguridad en integraciones.
             </p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn primary">Ver Proyectos</a>
@@ -95,10 +143,11 @@
                                 class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
-                <h3>Buscador DTE El Salvador</h3>
-                <p class="project-desc">Solución automatizada para buscar y descargar masivamente Facturas Electrónicas
-                    (DTE) desde correos de Gmail.</p>
-                <div class="tags"><span>Python</span><span>Automation</span><span>Docker</span><span>Render</span></div>
+                <h3>Solución DTE El Salvador</h3>
+                <p class="project-desc">Herramienta crítica para el cumplimiento tributario en El Salvador. Automatiza
+                    la búsqueda y descarga masiva de Facturas Electrónicas (DTE) desde Gmail, optimizando tiempos
+                    contables.</p>
+                <div class="tags"><span>Python</span><span>DTE SV</span><span>Automation</span><span>Docker</span></div>
             </article>
 
             <!-- Proyecto 3 -->
@@ -172,6 +221,26 @@
     <footer>
         <p>&copy; 2025 Eliezer Beltrán. Desarrollado con 💙 y código.</p>
     </footer>
+
+    <!-- Script para Efecto de Revelación al Scroll -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card, .section-title, .hero-content, .skill-category').forEach((el) => {
+            el.classList.add('reveal');
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>
